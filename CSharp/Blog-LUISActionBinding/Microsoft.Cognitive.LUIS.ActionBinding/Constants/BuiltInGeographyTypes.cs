@@ -2,11 +2,11 @@
 {
     public class BuiltInGeographyTypes
     {
-        public const string City = "builtin.geography.city";
+        public const string City = "builtin.geographyV2.city";
 
-        public const string Country = "builtin.geography.country";
+        public const string Country = "builtin.geographyV2.country";
 
-        public const string PointOfInterest = "builtin.geography.pointOfInterest";
+        public const string PointOfInterest = "builtin.geographyV2.pointOfInterest";
 
         public string CityType
         {

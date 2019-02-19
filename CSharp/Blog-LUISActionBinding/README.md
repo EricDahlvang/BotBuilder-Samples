@@ -16,11 +16,11 @@ The minimum prerequisites to run this sample are:
 #### LUIS Application
 If you want to test this sample, you have to import the pre-build [LUIS_MODEL.json](LUIS_MODEL.json) file to your LUIS account.
 
-The first step to using LUIS is to create or import an application. Go to the home page, www.luis.ai, and log in. After creating your LUIS account you'll be able to Import an Existing Application where can you can select a local copy of the LUIS_MODEL.json file an import it.
+The first step to using LUIS is to create or import an application. Go to the home page, www.luis.ai, and log in. After creating your LUIS account you'll be able to Import an Existing Application where can you can select a local copy of the LUIS_MODEL.json file and import it.
 
 ![Import an Existing Application](images/prereqs-import.png)
 
-Once you imported the application you'll need to "train" the model ([Training](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/Train-Test)) before you can "Publish" the model in an HTTP endpoint. For more information, take a look at [Publishing a Model](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/PublishApp).
+Once you imported the application you'll need to "train" the model ([Training](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-how-to-train)) before you can "Publish" it. For more information, take a look at [LUIS - How to Publish](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-how-to-publish-app).
 
 Finally, edit the .config files for each sample ([Bot](LuisActions.Samples.Bot/Web.config), [Web](LuisActions.Samples.Web/Web.config), [Console](LuisActions.Samples.Console/App.config)) and update the `LUIS_SubscriptionKey` and `LUIS_ModelId` appSettings with the values corresponding to your Subscription and Application.
 
@@ -36,7 +36,7 @@ You'll need these two values to configure the LuisDialog through the LuisModel a
     
 2. Subscription Key
 
-    In the [My keys page](https://www.luis.ai/home/keys), copy the Programmatic API Key.
+    Click on the Manage tab from the LUIS application UI.  Then navigate to Keys and Endpoints settings, and use the Authoring Key for this sample.  For instructions on using an actual Subscription Key, see [Using Subscription Keys](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-how-to-azure-subscription) 
     
     ![Programmatic API Key](images/prereqs-apikey.png)
 
@@ -939,7 +939,3 @@ To get more information about how to get started in Bot Builder for .NET and Con
 * [Enable language understanding with LUIS](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-luis-dialogs)
 * [LUIS Help Docs](https://www.luis.ai/Help/)
 * [Cognitive Services Documentation](https://www.microsoft.com/cognitive-services/en-us/luis-api/documentation/home)
-* [Specify initial form state and entities](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-formflow-advanced#specify-initial-form-state-and-entities)
-* Other examples using LUIS
-    * [Alarm Bot](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-luis-dialogs#alarm-bot-implementation)
-    * [Weather Bot](https://docs.microsoft.com/en-us/bot-framework/cognitive-services-add-bot-language#language-understanding-bot-example)

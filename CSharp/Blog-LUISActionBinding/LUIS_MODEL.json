@@ -57,14 +57,14 @@
     {
       "name": "Place",
       "children": [
-        "geography"
+        "geographyV2"
       ]
     }
   ],
   "closedLists": [],
   "bing_entities": [
     "datetimeV2",
-    "geography"
+    "geographyV2"
   ],
   "actions": [],
   "model_features": [],

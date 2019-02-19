@@ -23,14 +23,14 @@
             }
             else
             {
-                this.HandleSystemMessage(activity);
+                await this.HandleSystemMessage(activity);
             }
 
             var response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
         }
 
-        private Activity HandleSystemMessage(Activity message)
+        private async Task HandleSystemMessage(Activity message)
         {
             if (message.Type == ActivityTypes.DeleteUserData)
             {
@@ -42,6 +42,17 @@
                 // Handle conversation state changes, like members being added and removed
                 // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
                 // Not available in all channels
+
+                for (int i = 0; i < message.MembersAdded.Count; i++)
+                {
+                    if (message.MembersAdded[i].Id != message.Recipient.Id)
+                    {
+                        var connector = new ConnectorClient(new Uri(message.ServiceUrl));
+                        string reply = "Welcome to LUIS Action Binding sample.\n Ask me about finding hotels, or the weather in a city.";
+                        await connector.Conversations.ReplyToActivityAsync(message.CreateReply(reply)).ConfigureAwait(false);
+                        break;
+                    }
+                }
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
             {
@@ -54,9 +65,7 @@
             }
             else if (message.Type == ActivityTypes.Ping)
             {
-            }
-
-            return null;
+            }            
         }
     }
 }
